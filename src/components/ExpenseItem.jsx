@@ -1,7 +1,13 @@
 import React from 'react'
 
-export const ExpenseItem = () => {
+export const ExpenseItem = ({expense}) => {
+  const{id, charge, amount} = expense
   return (
-    <div>ExpenseItem</div>
+  <li>
+    
+    <div className='info'>
+      <span className='expense'>{charge}</span>
+      </div>
+      </li>
   )
 }
