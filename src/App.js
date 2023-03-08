@@ -7,6 +7,7 @@ import { useState } from 'react';
 const initialExpenses = [
   { id: uuidv4(), charge: "rent", amount: 1600 },
   { id: uuidv4(), charge: "car payment", amount: 1200 },
+  { id: uuidv4(), charge: "bills", amount: 600 },
   { id: uuidv4(), charge: "bills", amount: 600 }
 ]
 
@@ -18,20 +19,20 @@ function App() {
       <Alert />
       <h1>Budget Calculator</h1>
       <main className='App'>
-      <ExpenseForm />
-      <ExpenseList expenses= {expenses} />
+        <ExpenseForm />
+        <ExpenseList expenses={expenses} />
       </main>
       <h1>
         Total Spending : <span className='total'>
           ${""}
-          {expenses.reduce((acc, curr)=>{
-            return(acc += curr.amount)
+          {expenses.reduce((acc, curr) => {
+            return (acc += curr.amount)
           }, 0)}
-          
 
-          </span>
+
+        </span>
       </h1>
-      
+
     </div>
   );
 }
